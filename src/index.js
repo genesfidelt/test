@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+app.use(express.static('src/public')); // Serve static files
 
 // MySQL connection
 const connection = mysql.createConnection({
