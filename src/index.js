@@ -9,6 +9,11 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static('src/public')); // Serve static files
 
+// Serve index.html at the root
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html'); // Adjust path if needed
+});
+
 // MySQL connection
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
